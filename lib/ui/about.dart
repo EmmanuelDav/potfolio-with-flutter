@@ -51,22 +51,26 @@ class About extends StatelessWidget {
                         ),
                         Text(
                           _description,
-                          style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                                color: Colors.black.withOpacity(.7),
-                                fontSize: 17,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Colors.black.withOpacity(.7),
+                                    fontSize: 17,
+                                  ),
                         ),
                         const SizedBox(height: 30),
                         Row(
                           children: [
-                            RaisedButton(
-                              onPressed: () {},
-                              color: AppColors.yellow,
-                              textColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              child: Text('HIRE ME NOW'),
-                            ),
+                            Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 20),
+                                child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                      primary: AppColors.yellow,
+                                      textStyle:
+                                          TextStyle(color: Colors.yellow)),
+                                  child: Text('HIRE ME NOW'),
+                                )),
                             const SizedBox(width: 20),
                             RaisedButton(
                               onPressed: _downloadCV,
