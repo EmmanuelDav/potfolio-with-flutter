@@ -45,259 +45,47 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget.isSmallScreen(context)
-      ? Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/background.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              SliverAppBar(
-                key: _headerGlobalKey,
-                titleSpacing: 0,
-                toolbarHeight: 100,
-                backgroundColor: Colors.transparent,
-                flexibleSpace: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('images/cover.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.black,
-                          Colors.black87,
-                          Colors.transparent
-                        ],
-                      ),
-                    ),
-                  ),
+        ? Scaffold(
+            body: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/background.jpg'),
+                  fit: BoxFit.cover,
                 ),
-                title: Padding(
-                  padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * .15,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(1000),
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      color: AppColors.yellow,
-                      child: Image.asset('images/ouahid.png'),
-                    ),
-                  ),
-                ),
-                bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(500),
-                  child: Header(),
-                ),
-                actions: [
-                  Row(
-                    children: [
-                      MaterialButton(
-                        onPressed: _scrollToAbout,
-                        highlightColor: Colors.white60,
-                        child: Text(
-                          'About Me',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: _scrollToStatistics,
-                        child: Text(
-                          'Experience',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: _scrollToWorkingProcess,
-                        child: Text(
-                          'Process',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      MaterialButton(
-                        onPressed: _scrollToRecentProjects,
-                        child: Text(
-                          'Portfolio',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      const SizedBox(width: 20),
-                      RaisedButton(
-                        onPressed: _scrollToContactUs,
-                        color: AppColors.yellow!,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 15,
-                        ),
-                        child: Text(
-                          'Contact Me',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ), textColor: Colors.black,
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: MediaQuery.of(context).size.width * .15),
-                ],
               ),
-              ..._slivers(),
-            ],
-          ),
-        ),
-        floatingActionButton: _buildFab(),
-      )
-      : Scaffold(
-        drawer: Drawer(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  margin: const EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                    color: AppColors.yellow,
-                    borderRadius: BorderRadius.circular(1000),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(1000),
-                    child: Image.asset(
-                      'images/ouahid.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Divider(),
-                ListTile(
-                  onTap: _scrollToAbout,
-                  title: Text(
-                    'About Me',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                ListTile(
-                  onTap: _scrollToStatistics,
-                  title: Text(
-                    'Experience',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                ListTile(
-                  onTap: _scrollToWorkingProcess,
-                  title: Text(
-                    'Process',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                ListTile(
-                  onTap: _scrollToRecentProjects,
-                  title: Text(
-                    'Portfolio',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Divider(),
-                const SizedBox(height: 20),
-                ListTile(
-                  title: RaisedButton(
-                    onPressed: _scrollToContactUs,
-                    color: AppColors.yellow!,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 15,
-                    ),
-                    child: Text(
-                      'Contact Me',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ), textColor: Colors.black,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () async {
-                        launch(AppConstants.github);
-                      },
-                      child: AppIcon(
-                        'icons/github.png',
-                        color: AppColors.black,
+              child: CustomScrollView(
+                controller: _scrollController,
+                slivers: [
+                  SliverAppBar(
+                    key: _headerGlobalKey,
+                    titleSpacing: 0,
+                    toolbarHeight: 100,
+                    backgroundColor: Colors.transparent,
+                    flexibleSpace: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/cover.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.black,
+                              Colors.black87,
+                              Colors.transparent
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    const SizedBox(width: 20),
-                    InkWell(
-                      onTap: () {
-                        launch(AppConstants.linkedin);
-                      },
-                      child: AppIcon(
-                        'icons/linkedin.png',
-                        color: AppColors.black,
+                    title: Padding(
+                      padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.width * .15,
                       ),
-                    ),
-                    const SizedBox(width: 20),
-                    InkWell(
-                      onTap: () {
-                        launch(AppConstants.twitter);
-                      },
-                      child: AppIcon(
-                        'icons/twitter.png',
-                        color: AppColors.black,
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    InkWell(
-                      onTap: () {
-                        launch(AppConstants.facebook);
-                      },
-                      child: AppIcon(
-                        'icons/facebook.png',
-                        color: AppColors.black,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/background.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              SliverAppBar(
-                key: _headerGlobalKey,
-                titleSpacing: 0,
-                centerTitle: true,
-                backgroundColor: Colors.transparent,
-                leading: Align(
-                  child: Builder(
-                    builder: (ctx) => InkWell(
-                      onTap: () {
-                        Scaffold.of(ctx).openDrawer();
-                      },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(1000),
                         child: Container(
@@ -308,40 +96,259 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                  ),
-                ),
-                flexibleSpace: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('images/cover.jpg'),
-                      fit: BoxFit.cover,
+                    bottom: PreferredSize(
+                      preferredSize: Size.fromHeight(500),
+                      child: Header(),
                     ),
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.black,
-                          Colors.black87,
-                          Colors.transparent
+                    actions: [
+                      Row(
+                        children: [
+                          MaterialButton(
+                            onPressed: _scrollToAbout,
+                            highlightColor: Colors.white60,
+                            child: Text(
+                              'About Me',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: _scrollToStatistics,
+                            child: Text(
+                              'Experience',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: _scrollToWorkingProcess,
+                            child: Text(
+                              'Process',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: _scrollToRecentProjects,
+                            child: Text(
+                              'Portfolio',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          RaisedButton(
+                            onPressed: _scrollToContactUs,
+                            color: AppColors.yellow!,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40,
+                              vertical: 15,
+                            ),
+                            child: Text(
+                              'Contact Me',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            textColor: Colors.black,
+                          ),
                         ],
                       ),
-                    ),
+                      SizedBox(width: MediaQuery.of(context).size.width * .15),
+                    ],
                   ),
-                ),
-                bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(350),
-                  child: Header(),
+                  ..._slivers(),
+                ],
+              ),
+            ),
+            floatingActionButton: _buildFab(),
+          )
+        : Scaffold(
+            drawer: Drawer(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        color: AppColors.yellow,
+                        borderRadius: BorderRadius.circular(1000),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(1000),
+                        child: Image.asset(
+                          'images/ouahid.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Divider(),
+                    ListTile(
+                      onTap: _scrollToAbout,
+                      title: Text(
+                        'About Me',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    ListTile(
+                      onTap: _scrollToStatistics,
+                      title: Text(
+                        'Experience',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    ListTile(
+                      onTap: _scrollToWorkingProcess,
+                      title: Text(
+                        'Process',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    ListTile(
+                      onTap: _scrollToRecentProjects,
+                      title: Text(
+                        'Portfolio',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Divider(),
+                    const SizedBox(height: 20),
+                    ListTile(
+                      title: RaisedButton(
+                        onPressed: _scrollToContactUs,
+                        color: AppColors.yellow!,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 15,
+                        ),
+                        child: Text(
+                          'Contact Me',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        textColor: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () async {
+                            launch(AppConstants.github);
+                          },
+                          child: AppIcon(
+                            'icons/github.png',
+                            color: AppColors.black,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            launch(AppConstants.linkedin);
+                          },
+                          child: AppIcon(
+                            'icons/linkedin.png',
+                            color: AppColors.black,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            launch(AppConstants.twitter);
+                          },
+                          child: AppIcon(
+                            'icons/twitter.png',
+                            color: AppColors.black,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onTap: () {
+                            launch(AppConstants.facebook);
+                          },
+                          child: AppIcon(
+                            'icons/facebook.png',
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ),
               ),
-              ..._slivers(),
-            ],
-          ),
-        ),
-        floatingActionButton: _buildFab(),
-      );
+            ),
+            body: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/background.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: CustomScrollView(
+                controller: _scrollController,
+                slivers: [
+                  SliverAppBar(
+                    key: _headerGlobalKey,
+                    titleSpacing: 0,
+                    centerTitle: true,
+                    backgroundColor: Colors.transparent,
+                    leading: Align(
+                      child: Builder(
+                        builder: (ctx) => InkWell(
+                          onTap: () {
+                            Scaffold.of(ctx).openDrawer();
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(1000),
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              color: AppColors.yellow,
+                              child: Image.asset('images/ouahid.png'),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    flexibleSpace: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/cover.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.black,
+                              Colors.black87,
+                              Colors.transparent
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    bottom: PreferredSize(
+                      preferredSize: Size.fromHeight(350),
+                      child: Header(),
+                    ),
+                  ),
+                  ..._slivers(),
+                ],
+              ),
+            ),
+            floatingActionButton: _buildFab(),
+          );
   }
 
   List<Widget> _slivers() => [
@@ -438,18 +445,19 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
-  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+  RaisedButton(
+      {required void Function() onPressed,
+      required Color color,
+      required Color textColor,
+      required EdgeInsets padding,
+      required Text child}) {
     Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              primary: color,
-              textStyle:
-              TextStyle(color: textColor)),
+              primary: color, textStyle: TextStyle(color: textColor)),
           child: Text(child.toString()),
         ));
   }
-
 }

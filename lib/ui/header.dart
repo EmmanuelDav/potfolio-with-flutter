@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveWidget.isSmallScreen(context)
-        ? Container(
+      ? Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -61,7 +61,7 @@ class Header extends StatelessWidget {
             ],
           ),
         )
-        : Container(
+      : Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -117,18 +117,19 @@ class Header extends StatelessWidget {
     launch(AppConstants.cv);
   }
 
-  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+  RaisedButton(
+      {required void Function() onPressed,
+      required Color color,
+      required Color textColor,
+      required EdgeInsets padding,
+      required Text child}) {
     Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              primary: color,
-              textStyle:
-              TextStyle(color: textColor)),
+              primary: color, textStyle: TextStyle(color: textColor)),
           child: Text(child.toString()),
         ));
   }
-
 }
