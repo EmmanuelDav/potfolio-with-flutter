@@ -10,7 +10,7 @@ class MyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Container(
+      largeScreen: Container(
         color: AppColors.greyLight,
         padding: EdgeInsets.symmetric(vertical: 100),
         child: Column(
@@ -24,7 +24,7 @@ class MyProjects extends StatelessWidget {
           ],
         ),
       ),
-      mobileScreen: Container(
+      smallScreen: Container(
         color: AppColors.greyLight,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -54,7 +54,7 @@ class MyProjects extends StatelessWidget {
 
   Widget _buildProject(BuildContext context, Project project) =>
       ResponsiveWidget(
-        desktopScreen: SizedBox(
+        largeScreen: SizedBox(
           width: MediaQuery.of(context).size.width * .7,
           child: Column(
             children: [
@@ -90,23 +90,24 @@ class MyProjects extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.width * .025,
                         ),
-                        OutlineButton(
+                        OutlinedButton(
                           onPressed: () {
                             launch(project.url!);
                           },
-                          color: AppColors.yellow,
-                          textColor: AppColors.yellow,
-                          borderSide: BorderSide(
-                            color: AppColors.yellow!.withOpacity(.5),
-                            width: 5,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 50,
-                            vertical: 20,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                          style: OutlinedButton.styleFrom(
+                              backgroundColor: AppColors.yellow,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 50,
+                                vertical: 20,
+                              ),
+                              textStyle: TextStyle(color: AppColors.yellow),
+                              side: BorderSide(
+                                color: AppColors.yellow!.withOpacity(.5),
+                                width: 5,
+                              )),
                           child: Text('Visit'),
                         ),
                       ],
@@ -122,7 +123,7 @@ class MyProjects extends StatelessWidget {
             ],
           ),
         ),
-        mobileScreen: SizedBox(
+        smallScreen: SizedBox(
           width: MediaQuery.of(context).size.width * .7,
           child: Column(
             children: [
@@ -154,23 +155,24 @@ class MyProjects extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.width * .025,
               ),
-              OutlineButton(
+              OutlinedButton(
                 onPressed: () {
                   launch(project.url!);
                 },
-                color: AppColors.yellow,
-                textColor: AppColors.yellow,
-                borderSide: BorderSide(
-                  color: AppColors.yellow!.withOpacity(.5),
-                  width: 5,
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
-                  vertical: 20,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: AppColors.yellow,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 20,
+                    ),
+                    textStyle: TextStyle(color: AppColors.yellow),
+                    side: BorderSide(
+                      color: AppColors.yellow!.withOpacity(.5),
+                      width: 5,
+                    )),
                 child: Text('Visit'),
               ),
               Divider(

@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Scaffold(
+      largeScreen: Scaffold(
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                       const SizedBox(width: 20),
                       RaisedButton(
                         onPressed: _scrollToContactUs,
-                        color: AppColors.yellow,
+                        color: AppColors.yellow!,
                         padding: const EdgeInsets.symmetric(
                           horizontal: 40,
                           vertical: 15,
@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
                           'Contact Me',
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
+                        ), textColor: Colors.black,
                       ),
                     ],
                   ),
@@ -161,7 +161,7 @@ class _HomeState extends State<Home> {
         ),
         floatingActionButton: _buildFab(),
       ),
-      mobileScreen: Scaffold(
+      smallScreen: Scaffold(
         drawer: Drawer(
           child: SingleChildScrollView(
             child: Column(
@@ -216,7 +216,7 @@ class _HomeState extends State<Home> {
                 ListTile(
                   title: RaisedButton(
                     onPressed: _scrollToContactUs,
-                    color: AppColors.yellow,
+                    color: AppColors.yellow!,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 40,
                       vertical: 15,
@@ -224,7 +224,7 @@ class _HomeState extends State<Home> {
                     child: Text(
                       'Contact Me',
                       style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    ), textColor: Colors.black,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -438,4 +438,19 @@ class _HomeState extends State<Home> {
     _fabStream.close();
     super.dispose();
   }
+
+  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+    Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 30, vertical: 20),
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              primary: color,
+              textStyle:
+              TextStyle(color: textColor)),
+          child: Text(child.toString()),
+        ));
+  }
+
 }

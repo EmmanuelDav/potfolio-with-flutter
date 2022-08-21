@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveWidget(
-        desktopScreen: Container(
+        largeScreen: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -50,7 +50,7 @@ class Header extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               RaisedButton(
-                color: AppColors.yellow,
+                color: AppColors.yellow!,
                 textColor: Colors.white,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -61,7 +61,7 @@ class Header extends StatelessWidget {
             ],
           ),
         ),
-        mobileScreen: Container(
+        smallScreen: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -100,7 +100,7 @@ class Header extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 RaisedButton(
-                  color: AppColors.yellow,
+                  color: AppColors.yellow!,
                   textColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -117,4 +117,19 @@ class Header extends StatelessWidget {
   void _downloadCV() {
     launch(AppConstants.cv);
   }
+
+  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+    Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 30, vertical: 20),
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              primary: color,
+              textStyle:
+              TextStyle(color: textColor)),
+          child: Text(child.toString()),
+        ));
+  }
+
 }

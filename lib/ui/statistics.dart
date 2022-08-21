@@ -8,7 +8,7 @@ class Statistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Container(
+      largeScreen: Container(
         height: 400,
         color: Colors.black.withOpacity(.7),
         padding: EdgeInsets.symmetric(
@@ -24,7 +24,7 @@ class Statistics extends StatelessWidget {
           _buildStatistic(context, 'icons/coffee.png', '∞', 'Coffee Cups'),
         ]),
       ),
-      mobileScreen: Container(
+      smallScreen: Container(
         color: Colors.black54,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -50,7 +50,7 @@ class Statistics extends StatelessWidget {
   Widget _buildStatistic(
       BuildContext context, String icon, String total, String description) {
     return ResponsiveWidget(
-      desktopScreen: Column(
+      largeScreen: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AppIcon(icon, size: 50),
@@ -74,7 +74,7 @@ class Statistics extends StatelessWidget {
           ),
         ],
       ),
-      mobileScreen: Column(
+      smallScreen: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AppIcon(icon, size: 40),

@@ -16,7 +16,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Container(
+      largeScreen: Container(
         color: Colors.black,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -200,7 +200,7 @@ class Footer extends StatelessWidget {
           ],
         ),
       ),
-      mobileScreen: Container(
+      mediumScreen: Container(
         color: Colors.black,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -382,14 +382,14 @@ class Footer extends StatelessWidget {
           launch(project.url!);
         },
         child: ResponsiveWidget(
-          desktopScreen: Container(
+          largeScreen: Container(
             color: AppColors.greyLight,
             padding: const EdgeInsets.all(15),
             width: MediaQuery.of(context).size.width * .1,
             height: MediaQuery.of(context).size.width * .1,
             child: Image.asset(project.image!),
           ),
-          mobileScreen: Container(
+          smallScreen: Container(
             color: AppColors.greyLight,
             padding: const EdgeInsets.all(15),
             width: MediaQuery.of(context).size.width * .2,

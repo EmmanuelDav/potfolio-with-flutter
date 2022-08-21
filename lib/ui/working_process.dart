@@ -9,7 +9,7 @@ class WorkingProcess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Container(
+      largeScreen: Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -56,7 +56,7 @@ class WorkingProcess extends StatelessWidget {
           ],
         ),
       ),
-      mobileScreen: Container(
+      smallScreen: Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,

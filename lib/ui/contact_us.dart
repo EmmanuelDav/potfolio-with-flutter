@@ -25,7 +25,7 @@ class _ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      desktopScreen: Container(
+      largeScreen: Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -73,7 +73,7 @@ class _ContactUsState extends State<ContactUs> {
           ],
         ),
       ),
-      mobileScreen: Container(
+      smallScreen: Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -218,7 +218,7 @@ class _ContactUsState extends State<ContactUs> {
               ),
               const SizedBox(height: 20),
               RaisedButton(
-                color: AppColors.yellow,
+                color: AppColors.yellow!,
                 textColor: Colors.white,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -261,4 +261,21 @@ class _ContactUsState extends State<ContactUs> {
     _contentController.dispose();
     super.dispose();
   }
+
+  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+    Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 30, vertical: 20),
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              primary: color,
+              textStyle:
+              TextStyle(color: textColor)),
+          child: Text(child.toString()),
+        ));
+  }
+
 }
+
+

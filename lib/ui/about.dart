@@ -13,11 +13,15 @@ class About extends StatelessWidget {
       "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
 
   @override
-  Widget build(BuildContext context) => ResponsiveWidget(
-        desktopScreen: Container(
+  Widget build(BuildContext context) =>
+      ResponsiveWidget(
+        largeScreen: Container(
           color: Colors.white,
           padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * .15,
+            horizontal: MediaQuery
+                .of(context)
+                .size
+                .width * .15,
             vertical: 100,
           ),
           child: Column(
@@ -52,10 +56,14 @@ class About extends StatelessWidget {
                         Text(
                           _description,
                           style:
-                              Theme.of(context).textTheme.bodyText2!.copyWith(
-                                    color: Colors.black.withOpacity(.7),
-                                    fontSize: 17,
-                                  ),
+                          Theme
+                              .of(context)
+                              .textTheme
+                              .bodyText2!
+                              .copyWith(
+                            color: Colors.black.withOpacity(.7),
+                            fontSize: 17,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         Row(
@@ -68,7 +76,7 @@ class About extends StatelessWidget {
                                   style: ElevatedButton.styleFrom(
                                       primary: AppColors.yellow,
                                       textStyle:
-                                          TextStyle(color: Colors.yellow)),
+                                      TextStyle(color: Colors.yellow)),
                                   child: Text('HIRE ME NOW'),
                                 )),
                             const SizedBox(width: 20),
@@ -102,10 +110,13 @@ class About extends StatelessWidget {
             ],
           ),
         ),
-        mobileScreen: Container(
+        smallScreen: Container(
           color: Colors.white,
           padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * .15,
+            horizontal: MediaQuery
+                .of(context)
+                .size
+                .width * .15,
             vertical: 50,
           ),
           child: Column(
@@ -133,19 +144,23 @@ class About extends StatelessWidget {
               ),
               Text(
                 _description,
-                style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                      color: Colors.black.withOpacity(.7),
-                      fontSize: 13,
-                    ),
+                style: Theme
+                    .of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(
+                  color: Colors.black.withOpacity(.7),
+                  fontSize: 13,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
               RaisedButton(
                 onPressed: () {},
-                color: AppColors.yellow,
+                color: AppColors.yellow!,
                 textColor: Colors.white,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Text('HIRE ME NOW'),
               ),
               const SizedBox(height: 20),
@@ -154,7 +169,7 @@ class About extends StatelessWidget {
                 color: AppColors.black,
                 textColor: Colors.white,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Text('VIEW RESUME'),
               ),
               const SizedBox(height: 50),
@@ -180,4 +195,18 @@ class About extends StatelessWidget {
   }
 
   Widget _buildSkill(Skill skill) => Chip(label: Text(skill.name!));
+
+   RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+    Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: 30, vertical: 20),
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+              primary: color,
+              textStyle:
+              TextStyle(color: textColor)),
+          child: Text(child.toString()),
+        ));
+  }
 }
