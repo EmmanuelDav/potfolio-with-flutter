@@ -24,8 +24,8 @@ class _ContactUsState extends State<ContactUs> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Container(
+    return ResponsiveWidget.isSmallScreen(context)
+      ? Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -72,8 +72,8 @@ class _ContactUsState extends State<ContactUs> {
             )
           ],
         ),
-      ),
-      smallScreen: Container(
+      )
+      : Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -120,8 +120,7 @@ class _ContactUsState extends State<ContactUs> {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildContactInfo(String imagePath, String title, String content) {

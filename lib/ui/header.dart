@@ -12,8 +12,8 @@ class Header extends StatelessWidget {
       "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
 
   @override
-  Widget build(BuildContext context) => ResponsiveWidget(
-        largeScreen: Container(
+  Widget build(BuildContext context) => ResponsiveWidget.isSmallScreen(context)
+        ? Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -60,8 +60,8 @@ class Header extends StatelessWidget {
               const SizedBox(height: 100),
             ],
           ),
-        ),
-        smallScreen: Container(
+        )
+        : Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * .15,
@@ -111,8 +111,7 @@ class Header extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      );
+        );
 
   void _downloadCV() {
     launch(AppConstants.cv);

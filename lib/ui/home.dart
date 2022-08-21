@@ -44,8 +44,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Scaffold(
+    return ResponsiveWidget.isSmallScreen(context)
+      ? Scaffold(
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -160,8 +160,8 @@ class _HomeState extends State<Home> {
           ),
         ),
         floatingActionButton: _buildFab(),
-      ),
-      smallScreen: Scaffold(
+      )
+      : Scaffold(
         drawer: Drawer(
           child: SingleChildScrollView(
             child: Column(
@@ -341,8 +341,7 @@ class _HomeState extends State<Home> {
           ),
         ),
         floatingActionButton: _buildFab(),
-      ),
-    );
+      );
   }
 
   List<Widget> _slivers() => [

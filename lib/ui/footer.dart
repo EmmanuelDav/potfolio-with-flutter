@@ -15,8 +15,8 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Container(
+    return ResponsiveWidget.isSmallScreen(context)
+      ? Container(
         color: Colors.black,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -199,8 +199,8 @@ class Footer extends StatelessWidget {
             )
           ],
         ),
-      ),
-      mediumScreen: Container(
+      )
+      : Container(
         color: Colors.black,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -373,31 +373,29 @@ class Footer extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildProject(BuildContext context, Project project) => InkWell(
         onTap: () {
           launch(project.url!);
         },
-        child: ResponsiveWidget(
-          largeScreen: Container(
+        child: ResponsiveWidget.isSmallScreen(context)
+          ? Container(
             color: AppColors.greyLight,
             padding: const EdgeInsets.all(15),
             width: MediaQuery.of(context).size.width * .1,
             height: MediaQuery.of(context).size.width * .1,
             child: Image.asset(project.image!),
-          ),
-          smallScreen: Container(
+          )
+          : Container(
             color: AppColors.greyLight,
             padding: const EdgeInsets.all(15),
             width: MediaQuery.of(context).size.width * .2,
             height: MediaQuery.of(context).size.width * .2,
             child: Image.asset(project.image!),
           ),
-        ),
-      );
+        );
 
   List<Widget> _socialMedia() => [
         InkWell(

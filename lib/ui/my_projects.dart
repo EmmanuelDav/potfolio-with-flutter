@@ -9,8 +9,8 @@ import '../config/colors.dart';
 class MyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Container(
+    return ResponsiveWidget.isSmallScreen(context)
+      ? Container(
         color: AppColors.greyLight,
         padding: EdgeInsets.symmetric(vertical: 100),
         child: Column(
@@ -23,8 +23,8 @@ class MyProjects extends StatelessWidget {
             ...PROJECTS.map((p) => _buildProject(context, p)).toList(),
           ],
         ),
-      ),
-      smallScreen: Container(
+      )
+      : Container(
         color: AppColors.greyLight,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -48,13 +48,12 @@ class MyProjects extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildProject(BuildContext context, Project project) =>
-      ResponsiveWidget(
-        largeScreen: SizedBox(
+      ResponsiveWidget.isSmallScreen(context)
+        ? SizedBox(
           width: MediaQuery.of(context).size.width * .7,
           child: Column(
             children: [
@@ -122,8 +121,8 @@ class MyProjects extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        smallScreen: SizedBox(
+        )
+        : SizedBox(
           width: MediaQuery.of(context).size.width * .7,
           child: Column(
             children: [
@@ -182,6 +181,5 @@ class MyProjects extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      );
+        );
 }

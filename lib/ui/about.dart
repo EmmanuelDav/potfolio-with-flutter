@@ -14,8 +14,8 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      ResponsiveWidget(
-        largeScreen: Container(
+      ResponsiveWidget.isSmallScreen(context)
+        ? Container(
           color: Colors.white,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery
@@ -109,8 +109,8 @@ class About extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        smallScreen: Container(
+      )
+        :  Container(
           color: Colors.white,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery
@@ -187,7 +187,6 @@ class About extends StatelessWidget {
               ),
             ],
           ),
-        ),
       );
 
   void _downloadCV() {

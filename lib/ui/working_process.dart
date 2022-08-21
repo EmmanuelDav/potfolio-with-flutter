@@ -8,8 +8,8 @@ import 'icon.dart';
 class WorkingProcess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Container(
+    return ResponsiveWidget.isSmallScreen(context)
+      ? Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -55,8 +55,8 @@ class WorkingProcess extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      smallScreen: Container(
+      )
+      : Container(
         color: Colors.white,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -83,8 +83,7 @@ class WorkingProcess extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor laboris nisi ut aliquip ex ea commodo.'),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget __buildProcess(BuildContext context, String index, String iconPath,
