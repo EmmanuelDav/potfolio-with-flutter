@@ -7,8 +7,8 @@ import 'icon.dart';
 class Statistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isSmallScreen(context)
-      ? Container(
+    return ResponsiveWidget(
+      largeScreen:  Container(
         height: 400,
         color: Colors.black.withOpacity(.7),
         padding: EdgeInsets.symmetric(
@@ -23,8 +23,8 @@ class Statistics extends StatelessWidget {
           _buildStatistic(context, 'icons/happy.png', '50+', 'Happy Clients'),
           _buildStatistic(context, 'icons/coffee.png', '∞', 'Coffee Cups'),
         ]),
-      )
-      : Container(
+      ),
+      smallScreen : Container(
         color: Colors.black54,
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * .15,
@@ -43,13 +43,13 @@ class Statistics extends StatelessWidget {
             _buildStatistic(context, 'icons/coffee.png', '∞', 'Coffee Cups'),
           ],
         ),
-      );
+      ));
   }
 
   Widget _buildStatistic(
       BuildContext context, String icon, String total, String description) {
-    return ResponsiveWidget.isSmallScreen(context)
-      ? Column(
+    return ResponsiveWidget(
+      largeScreen:  Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AppIcon(icon, size: 50),
@@ -72,8 +72,8 @@ class Statistics extends StatelessWidget {
             ),
           ),
         ],
-      )
-      : Column(
+      ),
+     smallScreen : Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AppIcon(icon, size: 40),
@@ -96,6 +96,6 @@ class Statistics extends StatelessWidget {
             ),
           ),
         ],
-      );
+      ));
   }
 }
