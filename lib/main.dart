@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'ui/home.dart';
 import 'config/colors.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'OuahidDev',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: GoogleFonts.oxygenTextTheme(Theme.of(context).textTheme),
         accentColor: AppColors.yellow,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

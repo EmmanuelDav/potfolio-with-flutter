@@ -6,10 +6,10 @@ import '../config/constants.dart';
 import '../config/colors.dart';
 
 class Header extends StatelessWidget {
-  final String _name = "Abdelouahed";
+  final String _name = "Iyke Emmanuel";
   final String _job = "Mobile Developer";
   final String _description =
-      "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
+      "I create mobile solutions using Flutter and Native Android Frameworks.";
 
   @override
   Widget build(BuildContext context) => ResponsiveWidget(
@@ -124,19 +124,4 @@ class Header extends StatelessWidget {
     launch(AppConstants.cv);
   }
 
-  RaisedButton(
-      {required void Function() onPressed,
-      required Color color,
-      required Color textColor,
-      required EdgeInsets padding,
-      required Text child}) {
-    Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              primary: color, textStyle: TextStyle(color: textColor)),
-          child: Text(child.toString()),
-        ));
-  }
 }

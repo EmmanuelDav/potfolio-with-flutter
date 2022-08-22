@@ -141,21 +141,22 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           const SizedBox(width: 20),
-                          // RaisedButton(
-                          //   onPressed: _scrollToContactUs,
-                          //   color: AppColors.yellow!,
-                          //   padding: const EdgeInsets.symmetric(
-                          //     horizontal: 40,
-                          //     vertical: 15,
-                          //   ),
-                          //   child: Text(
-                          //     'Contact Me',
-                          //     style: TextStyle(
-                          //         color: Colors.white,
-                          //         fontWeight: FontWeight.bold),
-                          //   ),
-                          //   textColor: Colors.black,
-                          // ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 40,
+                              vertical: 15,
+                            ),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(backgroundColor: AppColors.yellow,textStyle: TextStyle(color: Colors.black)),
+                              onPressed: _scrollToContactUs,
+                              child: Text(
+                                'Contact Me',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * .15),
@@ -220,19 +221,20 @@ class _HomeState extends State<Home> {
                     Divider(),
                     const SizedBox(height: 20),
                     ListTile(
-                      // title: RaisedButton(
-                      //   onPressed: _scrollToContactUs,
-                      //   color: AppColors.yellow!,
-                      //   padding: const EdgeInsets.symmetric(
-                      //     horizontal: 40,
-                      //     vertical: 15,
-                      //   ),
-                      //   child: Text(
-                      //     'Contact Me',
-                      //     style: TextStyle(fontWeight: FontWeight.bold),
-                      //   ),
-                      //   textColor: Colors.black,
-                      // ),
+                      title: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 15,
+                        ),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(backgroundColor: AppColors.yellow,textStyle: TextStyle(color: Colors.black)),
+                          onPressed: _scrollToContactUs,
+                          child: Text(
+                            'Contact Me',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Row(
@@ -270,10 +272,10 @@ class _HomeState extends State<Home> {
                         const SizedBox(width: 20),
                         InkWell(
                           onTap: () {
-                            launch(AppConstants.facebook);
+                            launch(AppConstants.medium);
                           },
                           child: AppIcon(
-                            'icons/facebook.png',
+                            'icons/medium.png',
                             color: AppColors.black,
                           ),
                         ),
@@ -445,19 +447,4 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
-  RaisedButton(
-      {required void Function() onPressed,
-      required Color color,
-      required Color textColor,
-      required EdgeInsets padding,
-      required Text child}) {
-    Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              primary: color, textStyle: TextStyle(color: textColor)),
-          child: Text(child.toString()),
-        ));
-  }
 }

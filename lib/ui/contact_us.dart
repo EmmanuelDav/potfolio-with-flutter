@@ -216,14 +216,14 @@ class _ContactUsState extends State<ContactUs> {
                 ),
               ),
               const SizedBox(height: 20),
-              // RaisedButton(
-              //   color: AppColors.yellow!,
-              //   textColor: Colors.white,
-              //   padding:
-              //       const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-              //   onPressed: _sendMail,
-              //   child: Text('Send'),
-              // ),
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: AppColors.yellow,textStyle: TextStyle(color: Colors.white)),
+                  onPressed: _sendMail,
+                  child: Text('Send'),
+                ),
+              ),
             ],
           ),
         )
@@ -261,19 +261,4 @@ class _ContactUsState extends State<ContactUs> {
     super.dispose();
   }
 
-  RaisedButton(
-      {required void Function() onPressed,
-      required Color color,
-      required Color textColor,
-      required EdgeInsets padding,
-      required Text child}) {
-    Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              primary: color, textStyle: TextStyle(color: textColor)),
-          child: Text(child.toString()),
-        ));
-  }
 }

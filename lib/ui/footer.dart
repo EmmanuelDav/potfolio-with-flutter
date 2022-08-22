@@ -9,9 +9,9 @@ import 'icon.dart';
 
 class Footer extends StatelessWidget {
   final String _getInTouch =
-      "You have an idea, I am here to turn your dream into real digital solution.";
+      "Lets turn your idea into digital products.";
   final String _description =
-      "I am developer has around 4 years experience developing mobile and web applications, using different languages and techniques.";
+      "I am developer with 4 years experience developing mobile app for startups and small businesses.";
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +189,7 @@ class Footer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Proudly powered by OuahidDev ©${DateTime.now().year}',
+                  'Proudly powered by Iyke ©${DateTime.now().year}',
                   style: TextStyle(
                     color: AppColors.greyLight!.withOpacity(.75),
                   ),
@@ -365,7 +365,7 @@ class Footer extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Proudly powered by OuahidDev ©${DateTime.now().year}',
+              'Proudly powered by Iyke ©${DateTime.now().year}',
               style: TextStyle(
                 color: AppColors.greyLight!.withOpacity(.75),
               ),
@@ -421,9 +421,9 @@ class Footer extends StatelessWidget {
         const SizedBox(width: 20),
         InkWell(
           onTap: () {
-            launch(AppConstants.facebook);
+            launch(AppConstants.medium);
           },
-          child: AppIcon('icons/facebook.png'),
+          child: AppIcon('icons/medium.png'),
         ),
       ];
 }
