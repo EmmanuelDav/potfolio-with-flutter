@@ -24,25 +24,75 @@ class _ContactUsState extends State<ContactUs> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isSmallScreen(context)
-      ? Container(
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * .15,
-          vertical: 100,
+    return ResponsiveWidget(
+        largeScreen: Container(
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * .15,
+            vertical: 100,
+          ),
+          child: Column(
+            children: [
+              Text('GET IN TOUCH', style: AppStyles.title),
+              Container(width: 100, height: 2, color: AppColors.yellow),
+              const SizedBox(height: 3),
+              Container(width: 75, height: 2, color: AppColors.yellow),
+              const SizedBox(height: 50),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildContactInfo(
+                          'icons/email.png',
+                          'Mail Us:',
+                          AppConstants.mail,
+                        ),
+                        const SizedBox(height: 20),
+                        _buildContactInfo(
+                          'icons/call.png',
+                          'Call Us:',
+                          AppConstants.phone,
+                        ),
+                        const SizedBox(height: 20),
+                        _buildContactInfo(
+                          'icons/pin.png',
+                          'Visit Us:',
+                          AppConstants.location,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: _buildContactForm(context),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
-        child: Column(
-          children: [
-            Text('GET IN TOUCH', style: AppStyles.title),
-            Container(width: 100, height: 2, color: AppColors.yellow),
-            const SizedBox(height: 3),
-            Container(width: 75, height: 2, color: AppColors.yellow),
-            const SizedBox(height: 50),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
+        smallScreen: Container(
+          color: Colors.white,
+          padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * .15,
+            vertical: 100,
+          ),
+          child: Column(
+            children: [
+              Text(
+                'GET IN TOUCH',
+                style: AppStyles.title,
+                textAlign: TextAlign.center,
+              ),
+              Container(width: 75, height: 2, color: AppColors.yellow),
+              const SizedBox(height: 3),
+              Container(width: 50, height: 2, color: AppColors.yellow),
+              const SizedBox(height: 50),
+              Column(
+                children: [
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildContactInfo(
@@ -64,63 +114,13 @@ class _ContactUsState extends State<ContactUs> {
                       ),
                     ],
                   ),
-                ),
-                Expanded(
-                  child: _buildContactForm(context),
-                ),
-              ],
-            )
-          ],
-        ),
-      )
-      : Container(
-        color: Colors.white,
-        padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * .15,
-          vertical: 100,
-        ),
-        child: Column(
-          children: [
-            Text(
-              'GET IN TOUCH',
-              style: AppStyles.title,
-              textAlign: TextAlign.center,
-            ),
-            Container(width: 75, height: 2, color: AppColors.yellow),
-            const SizedBox(height: 3),
-            Container(width: 50, height: 2, color: AppColors.yellow),
-            const SizedBox(height: 50),
-            Column(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildContactInfo(
-                      'icons/email.png',
-                      'Mail Us:',
-                      AppConstants.mail,
-                    ),
-                    const SizedBox(height: 20),
-                    _buildContactInfo(
-                      'icons/call.png',
-                      'Call Us:',
-                      AppConstants.phone,
-                    ),
-                    const SizedBox(height: 20),
-                    _buildContactInfo(
-                      'icons/pin.png',
-                      'Visit Us:',
-                      AppConstants.location,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 50),
-                _buildContactForm(context),
-              ],
-            )
-          ],
-        ),
-      );
+                  const SizedBox(height: 50),
+                  _buildContactForm(context),
+                ],
+              )
+            ],
+          ),
+        ));
   }
 
   Widget _buildContactInfo(String imagePath, String title, String content) {
@@ -261,20 +261,19 @@ class _ContactUsState extends State<ContactUs> {
     super.dispose();
   }
 
-  RaisedButton({required void Function() onPressed, required Color color, required Color textColor, required EdgeInsets padding, required Text child}) {
+  RaisedButton(
+      {required void Function() onPressed,
+      required Color color,
+      required Color textColor,
+      required EdgeInsets padding,
+      required Text child}) {
     Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              primary: color,
-              textStyle:
-              TextStyle(color: textColor)),
+              primary: color, textStyle: TextStyle(color: textColor)),
           child: Text(child.toString()),
         ));
   }
-
 }
-
-
