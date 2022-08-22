@@ -141,21 +141,21 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           const SizedBox(width: 20),
-                          RaisedButton(
-                            onPressed: _scrollToContactUs,
-                            color: AppColors.yellow!,
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 40,
-                              vertical: 15,
-                            ),
-                            child: Text(
-                              'Contact Me',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            textColor: Colors.black,
-                          ),
+                          // RaisedButton(
+                          //   onPressed: _scrollToContactUs,
+                          //   color: AppColors.yellow!,
+                          //   padding: const EdgeInsets.symmetric(
+                          //     horizontal: 40,
+                          //     vertical: 15,
+                          //   ),
+                          //   child: Text(
+                          //     'Contact Me',
+                          //     style: TextStyle(
+                          //         color: Colors.white,
+                          //         fontWeight: FontWeight.bold),
+                          //   ),
+                          //   textColor: Colors.black,
+                          // ),
                         ],
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * .15),
@@ -220,19 +220,19 @@ class _HomeState extends State<Home> {
                     Divider(),
                     const SizedBox(height: 20),
                     ListTile(
-                      title: RaisedButton(
-                        onPressed: _scrollToContactUs,
-                        color: AppColors.yellow!,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 40,
-                          vertical: 15,
-                        ),
-                        child: Text(
-                          'Contact Me',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        textColor: Colors.black,
-                      ),
+                      // title: RaisedButton(
+                      //   onPressed: _scrollToContactUs,
+                      //   color: AppColors.yellow!,
+                      //   padding: const EdgeInsets.symmetric(
+                      //     horizontal: 40,
+                      //     vertical: 15,
+                      //   ),
+                      //   child: Text(
+                      //     'Contact Me',
+                      //     style: TextStyle(fontWeight: FontWeight.bold),
+                      //   ),
+                      //   textColor: Colors.black,
+                      // ),
                     ),
                     const SizedBox(height: 20),
                     Row(

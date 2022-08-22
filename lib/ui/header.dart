@@ -49,14 +49,18 @@ class Header extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              RaisedButton(
-                color: AppColors.yellow!,
-                textColor: Colors.white,
+              Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                onPressed: _downloadCV,
-                child: Text('Download CV'),
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.yellow,
+                      textStyle: TextStyle(color: Colors.white)),
+                  onPressed: _downloadCV,
+                  child: Text('Download CV'),
+                ),
               ),
+
               const SizedBox(height: 100),
             ],
           ),
@@ -99,13 +103,16 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                RaisedButton(
-                  color: AppColors.yellow!,
-                  textColor: Colors.white,
+                Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                  onPressed: _downloadCV,
-                  child: Text('Download CV'),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.yellow,
+                        textStyle: TextStyle(color: Colors.white)),
+                    onPressed: _downloadCV,
+                    child: Text('Download CV'),
+                  ),
                 ),
                 const SizedBox(height: 100),
               ],
