@@ -15,5 +15,5 @@ mixin AppConstants {
   static final String medium =
       'https://medium.com/@emmanueldav';
 
-  static final String cv = 'YOUR-CV-URL'; // TODO
+  static final String cv = 'https://docs.google.com/document/d/e/2PACX-1vRYP9OltH0dXCWDEU__hGjqtZT2NarfByvj1JWnmbkiHZ_oVhKiitgyL0Ka5gX8SPUXtacMY2EMk7id/pub'; // TODO
 }

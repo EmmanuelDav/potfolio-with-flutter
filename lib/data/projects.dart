@@ -73,7 +73,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'KIDDASH',
     description: 'KidDash is an Educational Platform designed to make learning fun for kids and young adults. It engages them with educational content that can keep them learning while also making learning fun and Inspiring.',
-    image: 'images/projects/Kiddash.png',
+    image: 'images/projects/Kiddash.jpg',
     url: 'https://play.google.com/store/apps/details?id=com.rad5TechHub.kiddash',
     skills: [
       'Flutter',
