@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
                           width: 40,
                           height: 40,
                           color: AppColors.yellow,
-                          child: Image.asset('images/ouahid.png'),
+                          child: Image.asset('images/iyke.png'),
                         ),
                       ),
                     ),
@@ -184,7 +184,7 @@ class _HomeState extends State<Home> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(1000),
                         child: Image.asset(
-                          'images/ouahid.png',
+                          'images/iyke.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -313,7 +313,7 @@ class _HomeState extends State<Home> {
                               width: 40,
                               height: 40,
                               color: AppColors.yellow,
-                              child: Image.asset('images/ouahid.png'),
+                              child: Image.asset('images/iyke.png'),
                             ),
                           ),
                         ),
