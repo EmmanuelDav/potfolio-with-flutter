@@ -15,7 +15,7 @@ List<Project> PROJECTS = [
     description:
         'Chooya is a virtual platform where people and businesses can host groups of friends, colleagues, or customers to pay or buy things together (products, services, or bills) as a group to save money',
 
-    image: 'images/projects/omran.png',
+    image: 'images/projects/chooya.png',
     url: 'https://play.google.com/store/apps/details?id=ng.com.rad5.chooya.revues',
     skills: [
       'Java',
@@ -31,7 +31,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'HELENE SME',
     description: 'Helene Income is an expense manager and a personal finance app. It aims to help small Businesses and services keep track of daily income and expenses.',
-    image: 'images/projects/topfood.png',
+    image: 'images/projects/SME.png',
     url: 'https://play.google.com/store/apps/details?id=com.pca.helene',
     skills: [
       'Kotlin',
@@ -46,7 +46,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'MEGA SURE ODDS',
     description: 'MEGA SURE 2 ODDS Is an online app that uses AI and artificial intelligence to predict the odds of a Soccer match using their Past performance',
-    image: 'images/projects/toptaxi.png',
+    image: 'images/projects/mega.png',
     url: 'https://play.google.com/store/apps/details?id=com.ekene.mega_sure_2_odds_user',
     skills: [
       'Java',
@@ -60,7 +60,7 @@ List<Project> PROJECTS = [
     name: 'HELENE INVOICE',
     description:
         'Helene Invoice makes invoicing effortless. Send customised invoice statements to your clients and receive payment in an instant',
-    image: 'images/projects/nataloe.png',
+    image: 'images/projects/invoice.png',
     url: 'https://play.google.com/store/apps/details?id=com.helene.invoice',
     skills: [
       'Kotlin',
@@ -73,7 +73,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'KIDDASH',
     description: 'KidDash is an Educational Platform designed to make learning fun for kids and young adults. It engages them with educational content that can keep them learning while also making learning fun and Inspiring.',
-    image: 'images/projects/juda.png',
+    image: 'images/projects/Kiddash.png',
     url: 'https://play.google.com/store/apps/details?id=com.rad5TechHub.kiddash',
     skills: [
       'Flutter',
