@@ -29,7 +29,7 @@ List<Project> PROJECTS = [
     ],
   ),
   Project(
-    name: 'HELENE SME',
+    name: 'HELENE PAY',
     description: 'Helene Income is an expense manager and a personal finance app. It aims to help small Businesses and services keep track of daily income and expenses.',
     image: 'images/projects/SME.png',
     url: 'https://play.google.com/store/apps/details?id=com.pca.helene',
@@ -59,7 +59,7 @@ List<Project> PROJECTS = [
   Project(
     name: 'HELENE INVOICE',
     description:
-        'Helene Invoice makes invoicing effortless. Send customised invoice statements to your clients and receive payment in an instant',
+        'Helene Invoice app is designed to help business-inclined individuals track and keep account of their customer details, notes, invoices, earnings, and business expenses in one app. making it easy and accessible across multiple devices. ',
     image: 'images/projects/invoice.png',
     url: 'https://play.google.com/store/apps/details?id=com.helene.invoice',
     skills: [
@@ -70,15 +70,20 @@ List<Project> PROJECTS = [
       'MVVM',
     ],
   ),
+
   Project(
-    name: 'KIDDASH',
-    description: 'KidDash is an Educational Platform designed to make learning fun for kids and young adults. It engages them with educational content that can keep them learning while also making learning fun and Inspiring.',
-    image: 'images/projects/Kiddash.jpg',
-    url: 'https://play.google.com/store/apps/details?id=com.rad5TechHub.kiddash',
+    name: 'Document Reader',
+    description: 'Document Reader is an app designed to open any type of document file such as Word (doc, docx), Sheet (xls, xlsx), Slide (ppt, pptx) , PDF,TXT,ZIP, RAR and RTF. with over 5M+ downloads it has topped playStore as one of the trusted apps for viewing documents.',
+    image: 'images/projects/doc_reader.png',
+    url: 'https://play.google.com/store/apps/details?id=com.united.office.reader',
     skills: [
-      'Flutter',
-      'BloC',
-      'Provider',
+      'MVVM',
+      'Dependency injection.',
+      'Coroutine',
+      'DataBinding',
+      'Kotlin',
+      'LiveData',
+      'Dagger2',
       'Dart',
     ],
   ),
